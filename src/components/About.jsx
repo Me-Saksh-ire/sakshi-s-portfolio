@@ -89,7 +89,7 @@ export default function About({ reduced }) {
 
           <p className="mb-[18px]">
             I have also worked with concepts like authentication, CRUD
-            operations, routing. API integration, and deployment. I am
+            operations, routing, API integration and deployment. I am
             continuously improving my problem-solving and development skills.
           </p>
         </div>
