@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import emailjs from "@emailjs/browser";
 import { spawnShockwave } from "../utils/shockwave";
 
 export default function Contact({ reduced }) {
@@ -116,17 +117,16 @@ export default function Contact({ reduced }) {
     }
     setStatus("sending");
     try {
-      // Replace this endpoint with your own — e.g. a Formspree form ID,
-      // an EmailJS call, or a POST to your own /api/contact route.
-      const res = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
         },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
       setStatus("sent");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {

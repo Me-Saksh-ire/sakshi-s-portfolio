@@ -80,7 +80,7 @@ export default function About({ reduced }) {
 
         <div ref={bodyRef} className="text-ash leading-[1.85] text-[15.5px]">
           <p className="mb-[18px]">
-            My name is <b className="text-bone font-semibold"> Sakshi.</b> I am
+            I am <b className="text-bone font-semibold"> Sakshi.</b> I am
             interested in full-stack web development, especially using the MERN
             Stack. I have knowledge of MongoDB, Express.js, React.js, and
             Node.js. I can build frontend interfaces using React, create REST
@@ -92,6 +92,16 @@ export default function About({ reduced }) {
             operations, routing, API integration and deployment. I am
             continuously improving my problem-solving and development skills.
           </p>
+
+          <div className="mt-6">
+            <a
+              href="/fullstackMERN_Sakshi_Resume.pdf"
+              download="fullstackMERN_Sakshi_Resume.pdf"
+              className="inline-flex items-center justify-center bg-emerald text-black font-semibold py-2 px-4 rounded-md border hover:border-crimson hover:bg-panel hover:text-bone transition-colors duration-300"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </div>
     </section>
