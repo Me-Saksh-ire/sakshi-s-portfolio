@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #ff3b52;
+  color: #08090a;
+}
+
+body {
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body.touch-device {
+  cursor: default;
+}
+
+@media (hover: none), (max-width: 900px) {
+  body {
+    cursor: default;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  body {
+    cursor: default;
+  }
+}
+
+/* film-grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.clip-hidden {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+.clip-shown {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
