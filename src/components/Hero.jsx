@@ -212,17 +212,6 @@ export default function Hero({ reduced }) {
             "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.5) 22%, black 45%, black 100%)",
         }}
       >
-        <img
-          src="/hero-figure.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{
-            objectPosition: "68% 18%",
-            filter: "grayscale(1) contrast(1.25) brightness(0.42) saturate(0)",
-            mixBlendMode: "luminosity",
-            opacity: 0.85,
-          }}
-        />
         <div
           className="absolute inset-0 z-[2]"
           style={{
